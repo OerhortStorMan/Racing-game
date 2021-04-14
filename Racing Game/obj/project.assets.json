@@ -61,19 +61,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\love.winelid\\.nuget\\packages\\": {}
+    "C:\\Users\\lwine\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\love.winelid\\Documents\\GitHub\\Programmering 2\\Projekt\\Slutprojektet\\Racing game\\Racing Game\\Racing Game.csproj",
+      "projectUniqueName": "C:\\Users\\lwine\\Documents\\VS code\\Programmering 2\\Projekt\\Slutprojektet\\Racing game\\Racing-game\\Racing Game\\Racing Game.csproj",
       "projectName": "Racing Game",
-      "projectPath": "c:\\Users\\love.winelid\\Documents\\GitHub\\Programmering 2\\Projekt\\Slutprojektet\\Racing game\\Racing Game\\Racing Game.csproj",
-      "packagesPath": "C:\\Users\\love.winelid\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\love.winelid\\Documents\\GitHub\\Programmering 2\\Projekt\\Slutprojektet\\Racing game\\Racing Game\\obj\\",
+      "projectPath": "C:\\Users\\lwine\\Documents\\VS code\\Programmering 2\\Projekt\\Slutprojektet\\Racing game\\Racing-game\\Racing Game\\Racing Game.csproj",
+      "packagesPath": "C:\\Users\\lwine\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\lwine\\Documents\\VS code\\Programmering 2\\Projekt\\Slutprojektet\\Racing game\\Racing-game\\Racing Game\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\love.winelid\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\lwine\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -115,7 +115,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

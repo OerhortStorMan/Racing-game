@@ -15,8 +15,8 @@ namespace Racing_Game
             //Create window
             Window.Initialize();
 
-            
-            while(!Raylib.WindowShouldClose())
+            int picker = 0;
+            while (!Raylib.WindowShouldClose())
             {
                 Raylib.BeginDrawing();
 
@@ -25,53 +25,61 @@ namespace Racing_Game
                 Raylib.DrawText("Racing game", 10, 10, 50, Color.WHITE);
 
                 //PICK OPTIONS ARRAY
-                            string[] array = new string[]{"Play", "Quit"};
+                string[] array = new string[] { "Play", /*"Options",*/ "Quit" };
 
-                            int x = 0;
-                        //WHITEN SELECTION AND ADD ARROW
-                            for (int i = 0; i < x; i++)
-                            {
-                                System.Console.WriteLine(array[i]);
-                            }
-                            Console.BackgroundColor = ConsoleColor.White;
-                            Console.ForegroundColor = ConsoleColor.Black;
-                            Console.WriteLine("--> " + array[x]);
-                            Console.BackgroundColor = ConsoleColor.Black;
-                            Console.ForegroundColor = ConsoleColor.White;
-                        
-                        for (int i = x+1; i < array.Length; i++)
-                        {
-                            System.Console.WriteLine(array[i]);
-                        }
-                        ConsoleKeyInfo Ui = Console.ReadKey();
+                int playTextY = 70;
+                Raylib.DrawText(array[0], 120, playTextY, 50, Color.WHITE);
 
-                        //TOGGLE BETWEEN SELECTIONS AND SELECT UPON CLICK
-                            if (Ui.Key == ConsoleKey.DownArrow && x != array.Length-1|| Ui.Key == ConsoleKey.S && x != array.Length-1)
-                            {
-                                x++;
-                            }
-                            else if (Ui.Key == ConsoleKey.UpArrow && x != 0|| Ui.Key == ConsoleKey.W && x != 0)
-                            {
-                                x--;
-                            }
-                            else if (Ui.Key == ConsoleKey.Enter)
-                            {
-                                if (x == 0)
-                                {
-                                    // Game();
-                                }
-                                else
-                                {
-                                    Environment.Exit(0);
-                                }
-                            }
+                int exitTextY = 150;
+                Raylib.DrawText(array[1], 120, exitTextY, 50, Color.WHITE);
+
+                if (Raylib.IsKeyPressed(KeyboardKey.KEY_S))
+                {
+                    picker++;
+                }
+
+                if (Raylib.IsKeyPressed(KeyboardKey.KEY_W))
+                {
+                    picker--;
+                }
+
+                //Lets player shift between play and exit, also allowing picker to loop around selections
+                if (picker == 0 || picker == 2)
+                {
+                    picker = 0;
+                    Raylib.DrawText("-->", 30, playTextY, 50, Color.WHITE);
+                }
+                else if (picker == 1 || picker == -1)
+                {
+                    picker = 1;
+                    Raylib.DrawText("-->", 30, exitTextY, 50, Color.WHITE);
+                }
+
+                if (picker == 0 && Raylib.IsKeyPressed(KeyboardKey.KEY_E))
+                {
+                    Raylib.CloseWindow();
+                    Game();
+                }
 
                 Raylib.EndDrawing();
-            
             }
-
         }
 
-        
+        static void Game()
+        {
+            Window.Initialize();
+
+            while (!Raylib.WindowShouldClose())
+            {
+                Raylib.BeginDrawing();
+
+                Raylib.ClearBackground(Window.backgroundColorGame);
+
+                Raylib.EndDrawing();
+            }
+        }
     }
 }
+
+// double GetTime(void);   // Returns elapsed time in seconds since InitWindow()
+
