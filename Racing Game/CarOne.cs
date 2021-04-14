@@ -13,6 +13,8 @@ namespace Racing_Game
 
         public float PosX;
         public float PosY;
+        
+        // public Color red = Color.RED;
 
     //Position for spawning car
         public CarOne(float PosX, float PosY)
