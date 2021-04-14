@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\love.winelid\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\love.winelid\\.nuget\\packages"
+    ]
+  }
+}
