@@ -94,8 +94,10 @@ Contol scheme:
         {
             Window.Initialize();
 
-            CarOne carOne = new CarOne(100, 100);
-           /*CAR ONE HERE!!! CHANGE TO TWO*/ CarOne carTwo = new CarOne(200, 200);
+            Car playerOne = new Car(100, 100, Color.RED, 0);
+            Car playerTwo = new Car(200, 200, Color.BLUE, 0);
+
+            Map road = new Map();
 
             while (!Raylib.WindowShouldClose())
             {
@@ -103,7 +105,13 @@ Contol scheme:
 
                 Raylib.ClearBackground(Window.backgroundColorGame);
 
-                GameObject.Draw(carOne, carTwo, road);
+                GameObject.Draw(playerOne, playerTwo, road);
+
+                playerOne.CalculatePlayerOne();
+
+                playerTwo.CalculatePlayerTwo();
+
+                
                 
                 Raylib.EndDrawing();
             }
