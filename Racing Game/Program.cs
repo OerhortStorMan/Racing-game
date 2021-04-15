@@ -99,15 +99,15 @@ Contol scheme:
 
             while (!Raylib.WindowShouldClose())
             {
+                playerOne.CalculatePlayerOne();
+
+                playerTwo.CalculatePlayerTwo();
+
                 Raylib.BeginDrawing();
 
                 Raylib.ClearBackground(Window.backgroundColorGame);
 
                 GameObject.Draw(playerOne, playerTwo, road);
-
-                playerOne.CalculatePlayerOne();
-
-                playerTwo.CalculatePlayerTwo();
 
                 Raylib.EndDrawing();
             }
