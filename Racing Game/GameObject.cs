@@ -11,14 +11,9 @@ namespace Racing_Game
 
             Raylib.DrawRectangle((int)playerTwo.PosX, (int)playerTwo.PosY, playerTwo.width, playerTwo.length, playerTwo.carColor);
         
-            Raylib.DrawText("P1: " + playerOne.lapScore.ToString(), (Window.windowW/2)-(Window.windowH/4)-150, 5, 100, Color.WHITE);
+            Raylib.DrawText("P1: " + playerOne.lapScore.ToString(), (Window.windowW/2)-(Window.windowH/4)-100, 5, 100, Color.WHITE);
             
-            Raylib.DrawText("P2: " + playerTwo.lapScore.ToString(), (Window.windowW/2)+(Window.windowH/4)-150, 5, 100, Color.WHITE);
-
-
-
+            Raylib.DrawText("P2: " + playerTwo.lapScore.ToString(), (Window.windowW/2)+(Window.windowH/4)-100, 5, 100, Color.WHITE);
         }
-
-        
     }
 }

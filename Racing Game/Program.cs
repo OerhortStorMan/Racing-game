@@ -40,7 +40,7 @@ Contol scheme:
         SPACE - BREAK (!)
 
         ESC - Return to menu
-                ", 500, 10, 20, Color.WHITE);
+", 500, 10, 20, Color.WHITE);
 
                 //PICK OPTIONS ARRAY
                 string[] array = new string[] { "Play", /*"Options",*/ "Quit" };
@@ -50,8 +50,6 @@ Contol scheme:
 
                 int exitTextY = 150;
                 Raylib.DrawText(array[1], 100, exitTextY, 50, Color.WHITE);
-
-                
 
                 if (Raylib.IsKeyPressed(KeyboardKey.KEY_S))
                 {
@@ -111,8 +109,6 @@ Contol scheme:
 
                 playerTwo.CalculatePlayerTwo();
 
-                
-                
                 Raylib.EndDrawing();
             }
         }
