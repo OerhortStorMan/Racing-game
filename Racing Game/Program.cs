@@ -92,8 +92,8 @@ Contol scheme:
         {
             Window.Initialize();
 
-            Car playerOne = new Car(100, 100, Color.RED, 0);
-            Car playerTwo = new Car(200, 200, Color.BLUE, 0);
+            Car playerOne = new Car(100, 100, Color.RED);
+            Car playerTwo = new Car(200, 200, Color.BLUE);
 
             Map road = new Map();
 

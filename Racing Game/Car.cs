@@ -25,12 +25,11 @@ namespace Racing_Game
         public int width = 10; 
 
     //Position for spawning car
-        public Car(float PosX, float PosY, Color carColor, int lapScore)
+        public Car(float PosX, float PosY, Color carColor)
         {
             this.PosX = PosX;
             this.PosY = PosY;
             this.carColor = carColor;
-            this.lapScore = lapScore;
         }
 
     //Calculate car movement
@@ -87,7 +86,6 @@ namespace Racing_Game
 
             return new Vector2(nextX, nextY);
         }
-
 
 
     }
