@@ -7,7 +7,7 @@ namespace Racing_Game
 {
     public class Car : GameObject
     {
-        public float speed = 5;
+        public float speed = 100;
         public float acceleration = 1.25f;
         public float rotation = 0;
 
@@ -20,9 +20,16 @@ namespace Racing_Game
 
         public int lapScore = 0;
 
-        public int length = 20;
+        public float length = 10;
 
-        public int width = 10; 
+        public float width = 20; 
+
+        public int yInput = 0;
+
+        public Vector2 origin = new Vector2(10, 5);
+
+        float dt = Raylib.GetFrameTime();        
+        
 
     //Position for spawning car
         public Car(float PosX, float PosY, Color carColor)
@@ -31,29 +38,32 @@ namespace Racing_Game
             this.PosY = PosY;
             this.carColor = carColor;
         }
-
+        
     //Calculate car movement
         public void CalculatePlayerOne()
         {
             //Car movement
-                //Forward
-                    if (Raylib.IsKeyDown(KeyboardKey.KEY_W))
-                    {
-                        PosY--;
-                    }
-                    else if(Raylib.IsKeyDown(KeyboardKey.KEY_A))
-                    {
-                        PosX--;
-                    }
-                    else if(Raylib.IsKeyDown(KeyboardKey.KEY_D))
-                    {
-                        PosX++;
-                    }
-                    else if(Raylib.IsKeyDown(KeyboardKey.KEY_S))
-                    {
-                        PosY++;
-                    }
-                      
+            if (Raylib.IsKeyDown(KeyboardKey.KEY_W))
+            {
+                yInput = -1;
+            }
+            if(Raylib.IsKeyDown(KeyboardKey.KEY_A))
+            {
+                rotation--;
+            }
+            if(Raylib.IsKeyDown(KeyboardKey.KEY_D))
+            {
+                rotation++;
+            }
+            if(Raylib.IsKeyDown(KeyboardKey.KEY_S))
+            {
+                yInput = 1;
+            }
+
+            PosX += MathF.Cos((rotation) * MathF.PI / 180) * speed * dt * yInput;
+            PosY += MathF.Sin((rotation) * MathF.PI / 180) * speed * dt * yInput;
+
+            yInput = 0;
         }
 
         public void CalculatePlayerTwo()
@@ -76,7 +86,9 @@ namespace Racing_Game
                     {
                         PosY++;
                     }
-                      
+                      PosX = MathF.Cos((rotation) * MathF.PI / 180) * speed * dt;
+                      PosY = MathF.Sin((rotation) * MathF.PI / 180) * speed * dt;
+
         }
 
         public Vector2 getNextPos()

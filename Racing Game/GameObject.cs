@@ -7,9 +7,10 @@ namespace Racing_Game
     {
         public static void Draw(Car playerOne, Car playerTwo, Map road)
         {
-            Raylib.DrawRectangle((int)playerOne.PosX, (int)playerOne.PosY, playerOne.width, playerOne.length, playerOne.carColor);
+            Raylib.DrawRectanglePro(new Rectangle(playerOne.PosX, playerOne.PosY, playerOne.width, playerOne.length), playerOne.origin, playerOne.rotation, playerOne.carColor);
+            // Raylib.DrawRectangle((int)playerOne.PosX, (int)playerOne.PosY, playerOne.width, playerOne.length, playerOne.carColor);
 
-            Raylib.DrawRectangle((int)playerTwo.PosX, (int)playerTwo.PosY, playerTwo.width, playerTwo.length, playerTwo.carColor);
+            // Raylib.DrawRectangle((int)playerTwo.PosX, (int)playerTwo.PosY, playerTwo.width, playerTwo.length, playerTwo.carColor);
         
             Raylib.DrawText("P1 Laps: " + playerOne.lapScore.ToString(), 30, 5, 45, Color.WHITE);
             
