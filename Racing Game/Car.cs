@@ -7,7 +7,7 @@ namespace Racing_Game
 {
     public class Car : GameObject
     {
-        public float speed = 100;
+        public float speed = 10;
         public float acceleration = 1.25f;
         public float rotation = 0;
 
@@ -28,7 +28,11 @@ namespace Racing_Game
 
         public Vector2 origin = new Vector2(10, 5);
 
-        float dt = Raylib.GetFrameTime();        
+        float dt = Raylib.GetFrameTime();
+        float timerAcc   = 0;
+        float timerDeacc = 0;
+        float timerBreak = 0;
+        float timerBreakAcc = 0;
         
 
     //Position for spawning car
@@ -46,22 +50,59 @@ namespace Racing_Game
             if (Raylib.IsKeyDown(KeyboardKey.KEY_W))
             {
                 yInput = -1;
+                timerAcc  += Raylib.GetFrameTime();
+                if (timerAcc  > 0.1f)
+                {
+                    speed += 5;
+                    timerAcc  = 0;
+                }
             }
-            if(Raylib.IsKeyDown(KeyboardKey.KEY_A))
+            else
+            {
+                timerDeacc += Raylib.GetFrameTime();
+                if (timerDeacc > 0.1f && speed > 0)
+                {
+                    speed -= 5;
+                    timerDeacc = 0;
+                }
+            }
+            if(Raylib.IsKeyDown(KeyboardKey.KEY_A) && speed != 0)
             {
                 rotation--;
             }
-            if(Raylib.IsKeyDown(KeyboardKey.KEY_D))
+            if(Raylib.IsKeyDown(KeyboardKey.KEY_D) && speed != 0)
             {
                 rotation++;
             }
             if(Raylib.IsKeyDown(KeyboardKey.KEY_S))
             {
                 yInput = 1;
+                timerBreakAcc += Raylib.GetFrameTime();
+                if (timerBreakAcc  > 0.1f)
+                {
+                    if (speed < 0)
+                    {
+                        speed -= 5;
+                    }
+                    else
+                    {
+                        speed -= 10;
+                    }
+                    timerBreakAcc  = 0;
+                }
+            }
+            else
+            {
+                timerBreak += Raylib.GetFrameTime();
+                if (timerBreak > 0.1f && speed < 0)
+                {
+                    speed += 5;
+                    timerBreak = 0;
+                }
             }
 
-            PosX += MathF.Cos((rotation) * MathF.PI / 180) * speed * dt * yInput;
-            PosY += MathF.Sin((rotation) * MathF.PI / 180) * speed * dt * yInput;
+            PosX += MathF.Cos((rotation) * MathF.PI / 180) * speed * dt;
+            PosY += MathF.Sin((rotation) * MathF.PI / 180) * speed * dt;
 
             yInput = 0;
         }
