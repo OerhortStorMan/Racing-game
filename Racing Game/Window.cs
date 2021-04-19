@@ -15,7 +15,7 @@ namespace Racing_Game
             //Background color
             public static Color backgroundColorMain = new Color(0,0,0,0);
 
-            public static Color backgroundColorGame = new Color(51, 107, 66, 0);
+            public static Color backgroundColorGame = new Color(70, 127, 86, 0);
 
         public static void Initialize()
         {
