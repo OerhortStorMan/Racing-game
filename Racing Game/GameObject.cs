@@ -5,8 +5,14 @@ namespace Racing_Game
 {
     public class GameObject
     {
-        public static void Draw(Car playerOne, Car playerTwo, Map road)
+        public static void Draw(Car playerOne, Car playerTwo)
         {
+            //grass
+
+            Rectangle grass = new Rectangle(0, 0, Window.windowW, Window.windowH);
+            Raylib.DrawRectangle((int)grass.x, (int)grass.y, (int)grass.width, (int)grass.height, Window.backgroundColorGame);
+
+            //road
             Raylib.DrawRectangleRec(Map.finishLine, Color.GRAY);
             Raylib.DrawRectangleRec(Map.straightway, Color.GRAY);
             Raylib.DrawRectangleRec(Map.deathcorner, Color.GRAY);
@@ -43,7 +49,10 @@ namespace Racing_Game
             Raylib.DrawText("P2 Laps: " + playerTwo.lapScore.ToString(), Window.windowW - 260, 5, 45, Color.BLUE);
 
 
+            // bool checkOutOfBoundsPlayerOne(Car.playerOne, grass)
+            // {
 
+            // }
 
             
 
