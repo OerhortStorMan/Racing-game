@@ -7,7 +7,7 @@ namespace Racing_Game
 {
     public class Car : GameObject
     {
-        public float speed = 10;
+        public float speed = 7.5f;
         public float rotation = 0;
         public float rotationSpeed = 1.75f;
 
