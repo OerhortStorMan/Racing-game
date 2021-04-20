@@ -92,9 +92,17 @@ Contol scheme:
         {
             Window.Initialize();
 
-            Car playerOne = new Car(100, 100, Color.RED);
+            Map.InitRoads();
+            Map map = new Map();
+
+
+            Car playerOne = new Car(200, 150, Color.RED);
             Car playerTwo = new Car(200, 200, Color.BLUE);
 
+            Scene plane = new Scene(playerOne, playerTwo);
+
+            playerOne.SetScene(plane);
+            playerTwo.SetScene(plane);
 
             while (!Raylib.WindowShouldClose())
             {
@@ -102,11 +110,14 @@ Contol scheme:
 
                 playerTwo.CalculatePlayerTwo();
 
+                plane.PlayerOneCollidesWithRoads(playerOne);
+
+
                 Raylib.BeginDrawing();
 
                 Raylib.ClearBackground(Window.backgroundColorGame);
 
-                GameObject.Draw(playerOne, playerTwo);
+                plane.Draw(playerOne, playerTwo);
 
                 Raylib.EndDrawing();
             }
