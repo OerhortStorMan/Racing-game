@@ -1,12 +1,13 @@
 using System;
 using Raylib_cs;
+using System.Collections.Generic;
 
 namespace Racing_Game
 {
     public class Map : GameObject
     {
+        //Road
         static float roadWidth = 100;
-
         static public Rectangle finishLine = new Rectangle(100, 100, roadWidth, 300);
         static public Rectangle straightway = new Rectangle(100, 100, 1300, roadWidth);
         static public Rectangle deathcorner = new Rectangle(1300, 100, roadWidth, 300);
@@ -20,8 +21,31 @@ namespace Racing_Game
         static public Rectangle offset = new Rectangle(300, 300, roadWidth, 500);
         static public Rectangle reRun = new Rectangle(100, 300, 300, roadWidth);
 
+        //Road list
+        public static List<Rectangle> roads = new List<Rectangle>();
 
+        //Initiate road
+        public static void InitRoads()
+        {
+            roads.Add(finishLine);
+            roads.Add(straightway);
+            roads.Add(deathcorner);
+            roads.Add(rebound);
+            roads.Add(snaketail);
+            roads.Add(turnaround);
+            roads.Add(mouth);
+            roads.Add(parallel);
+            roads.Add(southway);
+            roads.Add(straightwayJR);
+            roads.Add(offset);
+            roads.Add(reRun);
+        }
 
-        // static public Rectangle X = new Rectangle();
+        //Finish line & checkpoint
+        static public Rectangle finishline = new Rectangle(100, 300, 100, 20);
+
+        static public Rectangle checkpoint = new Rectangle(500, 500, 100, 20);
+        
+        
     }
 }
