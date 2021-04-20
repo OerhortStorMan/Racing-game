@@ -95,8 +95,8 @@ Contol scheme:
             Map map = new Map();
             map.InitRoads();
 
-            Car playerOne = new Car(200, 145, Color.RED, false);
-            Car playerTwo = new Car(200, 160, Color.BLUE, false);
+            Car playerOne = new Car(300, 145, Color.RED);
+            Car playerTwo = new Car(300, 160, Color.BLUE);
 
             Scene plane = new Scene(playerOne, playerTwo);
 
@@ -109,14 +109,11 @@ Contol scheme:
                 if (plane.PlayerOneCollidesWithRoads(playerOne, map) == false)
                 {
                    playerOne.speed = -10;
-                    
                 }
 
                 if (plane.PlayerTwoCollidesWithRoads(playerTwo, map) == false)
                 {
-                    
                    playerTwo.speed = -10;
-                    
                 }
 
                 Raylib.BeginDrawing();

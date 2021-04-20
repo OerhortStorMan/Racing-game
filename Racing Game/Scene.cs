@@ -9,6 +9,12 @@ namespace Racing_Game
         Car playerTwo;
         bool playerOneIsOnRoad = false;
         bool playerTwoIsOnRoad = false;
+
+        bool playerOneHasPassedCheckpoint = false;
+        bool playerTwoHasPassedCheckpoint = false;
+        bool playerOneHasPassedGoal = false;
+        bool playerTwoHasPassedGoal = false;
+
         public Rectangle playerOneRec;
         Rectangle playerTwoRec;
 
@@ -58,9 +64,17 @@ namespace Racing_Game
 
             Raylib.DrawText("P2 Laps: " + playerTwo.lapScore.ToString(), Window.windowW - 260, 5, 45, Color.BLUE);
 
-             
-             
-
+            playerOneHasPassedCheckpoint = Raylib.CheckCollisionRecs(playerOneRec, map.checkpoint);
+            playerTwoHasPassedCheckpoint = Raylib.CheckCollisionRecs(playerTwoRec, map.checkpoint);
+            playerOneHasPassedGoal = Raylib.CheckCollisionRecs(playerOneRec, map.goal);
+            playerTwoHasPassedGoal = Raylib.CheckCollisionRecs(playerTwoRec, map.goal);
+            
+            if (playerOneHasPassedCheckpoint == true && playerOneHasPassedGoal == true)
+            {
+                playerOne.lapScore++;
+                playerOneHasPassedCheckpoint = false;
+                playerOneHasPassedGoal = false;
+            }
         }
 
         public bool PlayerOneCollidesWithRoads(Car car, Map map)
