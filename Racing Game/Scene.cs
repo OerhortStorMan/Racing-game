@@ -61,25 +61,6 @@ namespace Racing_Game
 
             Raylib.DrawText("P2 Laps: " + playerTwo.lapScore.ToString(), Window.windowW - 260, 5, 45, Color.BLUE);
 
-
-            
-
-
-            
-
-
-
-            // bool outOfBoundsPlayerOne = Raylib.CheckCollisionRecs(playerOneRec, Map.roads);
-
-            // bool outOfBoundsPlayerTwo = Raylib.CheckCollisionRecs(playerTwoRec, grass);
-
-            // if (outOfBoundsPlayerOne)
-            // {
-            //     playerOne.speed = 0;
-            //     playerOne.speed -= 10;
-            // }
-
-
         }
 
         public bool PlayerOneCollidesWithRoads(Car car)
