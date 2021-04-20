@@ -6,6 +6,7 @@ namespace Racing_Game
 {
     public class Map : GameObject
     {
+        //Road
         static float roadWidth = 100;
         static public Rectangle finishLine = new Rectangle(100, 100, roadWidth, 300);
         static public Rectangle straightway = new Rectangle(100, 100, 1300, roadWidth);
@@ -20,9 +21,10 @@ namespace Racing_Game
         static public Rectangle offset = new Rectangle(300, 300, roadWidth, 500);
         static public Rectangle reRun = new Rectangle(100, 300, 300, roadWidth);
 
+        //Road list
         public static List<Rectangle> roads = new List<Rectangle>();
 
-
+        //Initiate road
         public static void InitRoads()
         {
             roads.Add(finishLine);
@@ -38,6 +40,11 @@ namespace Racing_Game
             roads.Add(offset);
             roads.Add(reRun);
         }
+
+        //Finish line & checkpoint
+        static public Rectangle finishline = new Rectangle(100, 300, 100, 20);
+
+        static public Rectangle checkpoint = new Rectangle(500, 500, 100, 20);
         
         
     }

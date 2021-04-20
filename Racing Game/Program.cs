@@ -96,7 +96,7 @@ Contol scheme:
             Map map = new Map();
 
 
-            Car playerOne = new Car(200, 150, Color.RED);
+            Car playerOne = new Car(200, 145, Color.RED);
             Car playerTwo = new Car(200, 160, Color.BLUE);
 
             Scene plane = new Scene(playerOne, playerTwo);
@@ -115,7 +115,7 @@ Contol scheme:
                     playerOne.speed = -10;
                 }
 
-                if (plane.PlayerTwoCollidesWithRoads(playerTwo))
+                if (plane.PlayerTwoCollidesWithRoads(playerTwo) == false)
                 {
                     playerTwo.speed = -10;
                 }

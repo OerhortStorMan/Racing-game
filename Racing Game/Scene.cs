@@ -7,8 +7,8 @@ namespace Racing_Game
     {
         Car playerOne;
         Car playerTwo;
-        bool playerOneHasCollided = false;
-        bool playerTwoHasCollided = false;
+        bool playerOneIsOnRoad = false;
+        bool playerTwoIsOnRoad = false;
         public Rectangle playerOneRec;
         Rectangle playerTwoRec;
 
@@ -82,9 +82,9 @@ namespace Racing_Game
         {
             for (int i = 0; i < Map.roads.Count; i++)
             {
-                playerOneHasCollided = Raylib.CheckCollisionRecs(playerOneRec, Map.roads[i]);
+                playerOneIsOnRoad = Raylib.CheckCollisionRecs(playerOneRec, Map.roads[i]);
 
-                if (playerOneHasCollided == true)
+                if (playerOneIsOnRoad == true)
                 {
                     return true;
                 }
@@ -96,22 +96,14 @@ namespace Racing_Game
         {
             for (int i = 0; i < Map.roads.Count; i++)
             {
-                playerTwoHasCollided = Raylib.CheckCollisionRecs(playerTwoRec, Map.roads[i]);
+                playerTwoIsOnRoad = Raylib.CheckCollisionRecs(playerTwoRec, Map.roads[i]);
 
-                if (playerTwoHasCollided == true)
+                if (playerTwoIsOnRoad == true)
                 {
                     return true;
                 }
             }
             return false;
         }
-            // /*
-            //     bool harkolliderat - false
-            //     loop genom listan:
-            //         Om kolliderar med rektangel:
-            //         harkolliderat = true
-
-            //     return harkolliderat
-            // */
     }
 }
