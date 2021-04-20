@@ -8,6 +8,7 @@ namespace Racing_Game
         Car playerOne;
         Car playerTwo;
         bool playerOneHasCollided = false;
+        bool playerTwoHasCollided = false;
         public Rectangle playerOneRec;
         Rectangle playerTwoRec;
 
@@ -87,9 +88,19 @@ namespace Racing_Game
                 {
                     return true;
                 }
-                else
+            }
+            return false;
+        }
+
+        public bool PlayerTwoCollidesWithRoads(Car car)
+        {
+            for (int i = 0; i < Map.roads.Count; i++)
+            {
+                playerTwoHasCollided = Raylib.CheckCollisionRecs(playerTwoRec, Map.roads[i]);
+
+                if (playerTwoHasCollided == true)
                 {
-                    return false;
+                    return true;
                 }
             }
             return false;

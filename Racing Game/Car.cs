@@ -38,8 +38,7 @@ namespace Racing_Game
         float timerBreakAcc = 0;
 
 
-        //Car front for collision and showing front
-        public Vector2 carFront = new Vector2(0, 5);
+        
 
 
         //Position for spawning car
