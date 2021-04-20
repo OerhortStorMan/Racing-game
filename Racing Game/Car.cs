@@ -12,8 +12,6 @@ namespace Racing_Game
         public float rotation = 0;
         public float rotationSpeed = 1.75f;
 
-        Scene scene;
-
         //car pos
         public float posX;
         public float posY;
@@ -23,6 +21,9 @@ namespace Racing_Game
 
         public int lapScore = 0;
 
+        public bool hasPassedCheckpoint = false;
+        public bool hasPassedGoal = false;
+
         public float length = 10;
 
         public float width = 20;
@@ -31,27 +32,22 @@ namespace Racing_Game
 
         public Vector2 origin = new Vector2(10, 5);
 
+         
+
         float dt = Raylib.GetFrameTime();
         float timerAcc = 0;
         float timerDeacc = 0;
         float timerBreak = 0;
         float timerBreakAcc = 0;
 
-
         
-
-
         //Position for spawning car
-        public Car(float posX, float posY, Color carColor)
+        public Car(float posX, float posY, Color carColor, bool hasPassedCheckpoint)
         {
             this.posX = posX;
             this.posY = posY;
             this.carColor = carColor;
-        }
-
-        public void SetScene(Scene scene)
-        {
-            this.scene = scene;
+            this.hasPassedCheckpoint = hasPassedCheckpoint;
         }
 
         //Calculate car movement
