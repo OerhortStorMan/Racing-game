@@ -22,10 +22,6 @@ namespace Racing_Game
 
         public void Draw(Car playerOne, Car playerTwo)
         {
-            //grass
-
-            // Rectangle grass = new Rectangle(0, 0, Window.windowW, Window.windowH);
-            // Raylib.DrawRectangle((int)grass.x, (int)grass.y, (int)grass.width, (int)grass.height, Window.backgroundColorGame);
 
             //road
             Raylib.DrawRectangleRec(Map.finishLine, Color.GRAY);
@@ -40,6 +36,10 @@ namespace Racing_Game
             Raylib.DrawRectangleRec(Map.straightwayJR, Color.GRAY);
             Raylib.DrawRectangleRec(Map.offset, Color.GRAY);
             Raylib.DrawRectangleRec(Map.reRun, Color.GRAY);
+
+            Raylib.DrawRectangleRec(Map.finishLine, Color.WHITE);
+
+            Raylib.DrawRectangleRec(Map.checkpoint, Color.YELLOW);
 
 
             playerOneRec = new Rectangle(playerOne.posX, playerOne.posY, playerOne.width, playerOne.length);
@@ -60,6 +60,10 @@ namespace Racing_Game
             Raylib.DrawText("P1 Laps: " + playerOne.lapScore.ToString(), 30, 5, 45, Color.RED);
 
             Raylib.DrawText("P2 Laps: " + playerTwo.lapScore.ToString(), Window.windowW - 260, 5, 45, Color.BLUE);
+
+
+            
+
 
             
 
