@@ -11,6 +11,7 @@ namespace Racing_Game
         public float speed = 10;
         public float rotation = 0;
         public float rotationSpeed = 1.75f;
+        public int ID;
 
         //car pos
         public float posX;
@@ -23,6 +24,7 @@ namespace Racing_Game
 
         public bool hasPassedCheckpoint = false;
         public bool hasPassedGoal = false;
+        public bool hasPassedBufferCheckpoint = false;
 
         public float length = 10;
 
@@ -42,12 +44,12 @@ namespace Racing_Game
 
         
         //Position for spawning car
-        public Car(float posX, float posY, Color carColor, bool hasPassedCheckpoint)
+        public Car(float posX, float posY, Color carColor, int ID)
         {
             this.posX = posX;
             this.posY = posY;
             this.carColor = carColor;
-            this.hasPassedCheckpoint = hasPassedCheckpoint;
+            this.ID = ID;
         }
 
         //Calculate car movement
@@ -127,6 +129,8 @@ namespace Racing_Game
             posY += MathF.Sin((rotation) * MathF.PI / 180) * speed * dt;
 
             yInput = 0;
+
+            
         }
 
         public void CalculatePlayerTwo()

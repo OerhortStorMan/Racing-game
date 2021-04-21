@@ -38,3 +38,23 @@ C:\Users\lwine\Documents\VS code\Programmering 2\Projekt\Slutprojektet\Racing ga
 C:\Users\lwine\Documents\VS code\Programmering 2\Projekt\Slutprojektet\Racing game\Racing-game\Racing Game\obj\Debug\netcoreapp3.1\Racing Game.dll
 C:\Users\lwine\Documents\VS code\Programmering 2\Projekt\Slutprojektet\Racing game\Racing-game\Racing Game\obj\Debug\netcoreapp3.1\Racing Game.pdb
 C:\Users\lwine\Documents\VS code\Programmering 2\Projekt\Slutprojektet\Racing game\Racing-game\Racing Game\obj\Debug\netcoreapp3.1\Racing Game.genruntimeconfig.cache
+C:\Users\love.winelid\Documents\GitHub\Programmering 2\Projekt\Slutprojektet\Racing Game2\Racing-game\Racing Game\bin\Debug\netcoreapp3.1\Racing Game.exe
+C:\Users\love.winelid\Documents\GitHub\Programmering 2\Projekt\Slutprojektet\Racing Game2\Racing-game\Racing Game\bin\Debug\netcoreapp3.1\Racing Game.deps.json
+C:\Users\love.winelid\Documents\GitHub\Programmering 2\Projekt\Slutprojektet\Racing Game2\Racing-game\Racing Game\bin\Debug\netcoreapp3.1\Racing Game.runtimeconfig.json
+C:\Users\love.winelid\Documents\GitHub\Programmering 2\Projekt\Slutprojektet\Racing Game2\Racing-game\Racing Game\bin\Debug\netcoreapp3.1\Racing Game.runtimeconfig.dev.json
+C:\Users\love.winelid\Documents\GitHub\Programmering 2\Projekt\Slutprojektet\Racing Game2\Racing-game\Racing Game\bin\Debug\netcoreapp3.1\Racing Game.dll
+C:\Users\love.winelid\Documents\GitHub\Programmering 2\Projekt\Slutprojektet\Racing Game2\Racing-game\Racing Game\bin\Debug\netcoreapp3.1\Racing Game.pdb
+C:\Users\love.winelid\Documents\GitHub\Programmering 2\Projekt\Slutprojektet\Racing Game2\Racing-game\Racing Game\bin\Debug\netcoreapp3.1\Raylib-cs.dll
+C:\Users\love.winelid\Documents\GitHub\Programmering 2\Projekt\Slutprojektet\Racing Game2\Racing-game\Racing Game\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libraylib.so
+C:\Users\love.winelid\Documents\GitHub\Programmering 2\Projekt\Slutprojektet\Racing Game2\Racing-game\Racing Game\bin\Debug\netcoreapp3.1\runtimes\linux-x86\native\libraylib.so
+C:\Users\love.winelid\Documents\GitHub\Programmering 2\Projekt\Slutprojektet\Racing Game2\Racing-game\Racing Game\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libraylib.dylib
+C:\Users\love.winelid\Documents\GitHub\Programmering 2\Projekt\Slutprojektet\Racing Game2\Racing-game\Racing Game\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\raylib.dll
+C:\Users\love.winelid\Documents\GitHub\Programmering 2\Projekt\Slutprojektet\Racing Game2\Racing-game\Racing Game\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\raylib.dll
+C:\Users\love.winelid\Documents\GitHub\Programmering 2\Projekt\Slutprojektet\Racing Game2\Racing-game\Racing Game\obj\Debug\netcoreapp3.1\Racing Game.csprojAssemblyReference.cache
+C:\Users\love.winelid\Documents\GitHub\Programmering 2\Projekt\Slutprojektet\Racing Game2\Racing-game\Racing Game\obj\Debug\netcoreapp3.1\Racing Game.AssemblyInfoInputs.cache
+C:\Users\love.winelid\Documents\GitHub\Programmering 2\Projekt\Slutprojektet\Racing Game2\Racing-game\Racing Game\obj\Debug\netcoreapp3.1\Racing Game.AssemblyInfo.cs
+C:\Users\love.winelid\Documents\GitHub\Programmering 2\Projekt\Slutprojektet\Racing Game2\Racing-game\Racing Game\obj\Debug\netcoreapp3.1\Racing Game.csproj.CoreCompileInputs.cache
+C:\Users\love.winelid\Documents\GitHub\Programmering 2\Projekt\Slutprojektet\Racing Game2\Racing-game\Racing Game\obj\Debug\netcoreapp3.1\Racing Game.csproj.CopyComplete
+C:\Users\love.winelid\Documents\GitHub\Programmering 2\Projekt\Slutprojektet\Racing Game2\Racing-game\Racing Game\obj\Debug\netcoreapp3.1\Racing Game.dll
+C:\Users\love.winelid\Documents\GitHub\Programmering 2\Projekt\Slutprojektet\Racing Game2\Racing-game\Racing Game\obj\Debug\netcoreapp3.1\Racing Game.pdb
+C:\Users\love.winelid\Documents\GitHub\Programmering 2\Projekt\Slutprojektet\Racing Game2\Racing-game\Racing Game\obj\Debug\netcoreapp3.1\Racing Game.genruntimeconfig.cache

@@ -95,8 +95,8 @@ Contol scheme:
             Map map = new Map();
             map.InitRoads();
 
-            Car playerOne = new Car(200, 145, Color.RED, false);
-            Car playerTwo = new Car(200, 160, Color.BLUE, false);
+            Car playerOne = new Car(200, 145, Color.RED, 1);
+            Car playerTwo = new Car(200, 160, Color.BLUE, 2);
 
             Scene plane = new Scene(playerOne, playerTwo);
 
@@ -114,7 +114,6 @@ Contol scheme:
 
                 if (plane.PlayerTwoCollidesWithRoads(playerTwo, map) == false)
                 {
-                    
                    playerTwo.speed = -10;
                     
                 }
@@ -124,6 +123,15 @@ Contol scheme:
                 Raylib.ClearBackground(Window.backgroundColorGame);
 
                 plane.Draw(playerOne, playerTwo, map);
+
+                if (playerOne.lapScore == 3)
+                {
+                    plane.AWinner(playerOne);
+                }
+                else if (playerTwo.lapScore == 3)
+                {
+                    plane.AWinner(playerTwo);
+                }
 
                 Raylib.EndDrawing();
             }

@@ -44,7 +44,9 @@ namespace Racing_Game
         //Finish line & checkpoint
          public Rectangle goal = new Rectangle(230, 100, 20, 100);
 
-         public Rectangle checkpoint = new Rectangle(500, 500, 100, 20);
+        public Rectangle checkpoint = new Rectangle(500, 500, 100, 20);
+
+        public Rectangle bufferCheckpoint = new Rectangle(280, 100, 20, 100);
         
         
     }

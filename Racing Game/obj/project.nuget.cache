@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "aOqk+4sXT6iqnAfidxwcKf7+1vhyh2SxSPF+U8cqiKj/pn1yMCACC0nWn/i7gG7wTVndhuAJYHNvSdoKGWr4PA==",
+  "dgSpecHash": "91n0TtvILbADWSqHs7mLDxNR1lj7nC+MqwzDMI33h8SpNhW2+iMOUixURG0JjjwvloYWbQ+YszHEgv/ZJxA6Ag==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lwine\\Documents\\VS code\\Programmering 2\\Projekt\\Slutprojektet\\Racing game\\Racing-game\\Racing Game\\Racing Game.csproj",
+  "projectFilePath": "C:\\Users\\love.winelid\\Documents\\GitHub\\Programmering 2\\Projekt\\Slutprojektet\\Racing Game2\\Racing-game\\Racing Game\\Racing Game.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\lwine\\.nuget\\packages\\raylib-cs\\3.5.0\\raylib-cs.3.5.0.nupkg.sha512"
+    "C:\\Users\\love.winelid\\.nuget\\packages\\raylib-cs\\3.5.0\\raylib-cs.3.5.0.nupkg.sha512"
   ],
   "logs": []
 }
