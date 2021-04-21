@@ -124,13 +124,17 @@ Contol scheme:
 
                 plane.Draw(playerOne, playerTwo, map);
 
-                if (playerOne.lapScore == 3)
+                if (playerOne.lapScore == 1)
                 {
                     plane.AWinner(playerOne);
+                    playerOne.speed = 0;
+                    playerTwo.speed = 0;
                 }
-                else if (playerTwo.lapScore == 3)
+                else if (playerTwo.lapScore == 1)
                 {
                     plane.AWinner(playerTwo);
+                    playerOne.speed = 0;
+                    playerTwo.speed = 0;
                 }
 
                 Raylib.EndDrawing();
