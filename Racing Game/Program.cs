@@ -43,13 +43,13 @@ Contol scheme:
 ", 500, 10, 20, Color.WHITE);
 
                 //PICK OPTIONS ARRAY
-                string[] array = new string[] { "Play", /*"Options",*/ "Quit" };
+                string[] pickArray = new string[] { "Play", /*"Options",*/ "Quit" };
 
                 int playTextY = 70;
-                Raylib.DrawText(array[0], 100, playTextY, 50, Color.WHITE);
+                Raylib.DrawText(pickArray[0], 100, playTextY, 50, Color.WHITE);
 
                 int exitTextY = 150;
-                Raylib.DrawText(array[1], 100, exitTextY, 50, Color.WHITE);
+                Raylib.DrawText(pickArray[1], 100, exitTextY, 50, Color.WHITE);
 
                 if (Raylib.IsKeyPressed(KeyboardKey.KEY_S))
                 {
