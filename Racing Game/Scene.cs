@@ -147,7 +147,7 @@ namespace Racing_Game
         public void AWinner(Car car)
         {
             Raylib.DrawRectangle(0,0,Window.windowW, Window.windowH, Color.BLACK);
-            Raylib.DrawText("Player " + car.ID.ToString() + " has won the race", 200, 500, 50, Color.MAGENTA);
+            Raylib.DrawText("Player " + car.ID.ToString() + " has won the race", 300, 400, 50, Color.MAGENTA);
             
         }
     }

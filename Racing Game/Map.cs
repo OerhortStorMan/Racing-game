@@ -6,6 +6,9 @@ namespace Racing_Game
 {
     public class Map : GameObject
     {
+        //Amounth of laps required for a win
+        public int lapReq = 2;
+
         //Road
          static float roadWidth = 100;
          public Rectangle finishLine = new Rectangle(100, 100, roadWidth, 300);

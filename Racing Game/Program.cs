@@ -124,13 +124,13 @@ Contol scheme:
 
                 plane.Draw(playerOne, playerTwo, map);
 
-                if (playerOne.lapScore == 1)
+                if (playerOne.lapScore == map.lapReq)
                 {
                     plane.AWinner(playerOne);
                     playerOne.speed = 0;
                     playerTwo.speed = 0;
                 }
-                else if (playerTwo.lapScore == 1)
+                else if (playerTwo.lapScore == map.lapReq)
                 {
                     plane.AWinner(playerTwo);
                     playerOne.speed = 0;
