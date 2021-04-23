@@ -32,7 +32,7 @@ namespace Racing_Game
 
         public int yInput = 0;
 
-        public Vector2 origin = new Vector2((10), 5);
+        public Vector2 origin = new Vector2(10, 5);
 
          
 
