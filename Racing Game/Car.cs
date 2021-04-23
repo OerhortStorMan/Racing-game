@@ -10,7 +10,7 @@ namespace Racing_Game
 
         public float speed = 10;
         public float rotation = 0;
-        public float rotationSpeed = 1.75f;
+        public float rotationSpeed = 1.875f;
         public int ID;
 
         //car pos
