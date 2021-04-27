@@ -33,12 +33,18 @@ Contol scheme:
         ESC - Exit game
 
     In-game:
-        W - Accelerate
-        S - Reverse
-        A - Turn left
-        D - Turn Right
-        SPACE - BREAK (!)
+        Player one:
+            W - Accelerate
+            S - Reverse / Break
+            A - Turn left
+            D - Turn Right
 
+        Player two:
+            UP - Accelerate
+            DOWN - Reverse / Break
+            LEFT - Turn left
+            RIGHT - Turn Right
+        
         ESC - Return to menu
 ", 500, 10, 20, Color.WHITE);
 
