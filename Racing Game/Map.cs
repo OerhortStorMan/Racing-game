@@ -1,6 +1,7 @@
 using System;
 using Raylib_cs;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace Racing_Game
 {
@@ -25,9 +26,10 @@ namespace Racing_Game
          public Rectangle reRun = new Rectangle(100, 300, 300, roadWidth);
 
         //Road list
-        public  List<Rectangle> roads = new List<Rectangle>();
+        //This shortens code in Scene using a for loop to draw roads
+        public List<Rectangle> roads = new List<Rectangle>();
 
-        //Initiate road
+        //Initiate road, adding road recs to roads list
         public void InitRoads()
         {
             roads.Add(finishLine);
@@ -45,7 +47,7 @@ namespace Racing_Game
         }
 
         //Finish line & checkpoint
-         public Rectangle goal = new Rectangle(230, 100, 20, 100);
+        public Rectangle goal = new Rectangle(230, 100, 20, 100);
 
         public Rectangle checkpoint = new Rectangle(500, 500, 100, 20);
 

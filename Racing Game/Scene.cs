@@ -21,24 +21,16 @@ namespace Racing_Game
         public void Draw(Car playerOne, Car playerTwo, Map map)
         {
             //Draw road and goals + checkpoints
-            Raylib.DrawRectangleRec(map.finishLine, Color.GRAY);
-            Raylib.DrawRectangleRec(map.straightway, Color.GRAY);
-            Raylib.DrawRectangleRec(map.deathcorner, Color.GRAY);
-            Raylib.DrawRectangleRec(map.rebound, Color.GRAY);
-            Raylib.DrawRectangleRec(map.snaketail, Color.GRAY);
-            Raylib.DrawRectangleRec(map.turnaround, Color.GRAY);
-            Raylib.DrawRectangleRec(map.mouth, Color.GRAY);
-            Raylib.DrawRectangleRec(map.parallel, Color.GRAY);
-            Raylib.DrawRectangleRec(map.southway, Color.GRAY);
-            Raylib.DrawRectangleRec(map.straightwayJR, Color.GRAY);
-            Raylib.DrawRectangleRec(map.offset, Color.GRAY);
-            Raylib.DrawRectangleRec(map.reRun, Color.GRAY);
+            for (int i = 0; i < map.roads.Count; i++)
+            {
+                Raylib.DrawRectangleRec(map.roads[i], Color.GRAY);
+            }
 
+            //Draw goal
             Raylib.DrawRectangleRec(map.goal, Color.WHITE);
 
             //These are gray so that they are invisible to the player, making it near impossible for the player to cheat without seeing the code
             Raylib.DrawRectangleRec(map.checkpoint, Color.GRAY);
-
             Raylib.DrawRectangleRec(map.bufferCheckpoint, Color.GRAY);
 
 
@@ -48,7 +40,7 @@ namespace Racing_Game
 
             Raylib.DrawRectanglePro(playerOneRec, playerOne.origin, playerOne.rotation, playerOne.carColor);
 
-            //Roof of car to indicate back and front
+            //Roof/back of car to indicate back and front
             Raylib.DrawRectanglePro(new Rectangle(playerOne.posX, playerOne.posY, 10, 10), playerOne.origin, playerOne.rotation, Color.BROWN);
 
 
@@ -58,7 +50,7 @@ namespace Racing_Game
 
             Raylib.DrawRectanglePro(playerTwoRec, playerTwo.origin, playerTwo.rotation, playerTwo.carColor);
 
-            //Roof of car to indicate back and front
+            //Roof/back of car to indicate back and front
             Raylib.DrawRectanglePro(new Rectangle(playerTwo.posX, playerTwo.posY, 10, 10), playerTwo.origin, playerTwo.rotation, Color.DARKBLUE);
 
 
@@ -147,7 +139,7 @@ namespace Racing_Game
         public void AWinner(Car car)
         {
             Raylib.DrawRectangle(0,0,Window.windowW, Window.windowH, Color.BLACK);
-            Raylib.DrawText("Player " + car.ID.ToString() + " has won the race", 300, 400, 50, Color.MAGENTA);
+            Raylib.DrawText("Player " + car.ID.ToString() + " has won the race", 400, 350, 50, Color.MAGENTA);
             
         }
     }
