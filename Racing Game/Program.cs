@@ -131,14 +131,14 @@ Contol scheme:
                 //Draw cars and map
                 plane.Draw(playerOne, playerTwo, map);
 
-                //If playerone has passed all laps let player 1 win, also stops their speed making it impossible for playerone to win, then two, or other way around
+                //If player has passed all laps let player win, also stops both players speed making it impossible for the other player to win
                 if (playerOne.lapScore == map.lapReq)
                 {
                     plane.AWinner(playerOne);
                     playerOne.speed = 0;
                     playerTwo.speed = 0;
                 }
-                else if (playerTwo.lapScore == map.lapReq)
+                if (playerTwo.lapScore == map.lapReq)
                 {
                     plane.AWinner(playerTwo);
                     playerOne.speed = 0;
