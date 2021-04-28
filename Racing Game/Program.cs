@@ -49,7 +49,7 @@ Contol scheme:
 ", 500, 10, 25, Color.WHITE);
 
                 //PICK OPTIONS ARRAY
-                string[] pickArray = new string[] { "Play", /*"Options",*/ "Quit" };
+                string[] pickArray = new string[] { "Play", "Quit" };
 
                 int playTextY = 70;
                 Raylib.DrawText(pickArray[0], 100, playTextY, 50, Color.WHITE);
