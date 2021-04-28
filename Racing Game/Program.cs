@@ -96,7 +96,7 @@ Contol scheme:
 
         static void Game()
         {
-            Window.Initialize(); 
+            Window.Initialize();
 
             Map map = new Map();
             map.InitRoads();
@@ -114,12 +114,12 @@ Contol scheme:
 
                 if (plane.PlayerOneCollidesWithRoads(playerOne, map) == false)
                 {
-                   playerOne.speed = -10;
+                    playerOne.speed = -10;
                 }
 
                 if (plane.PlayerTwoCollidesWithRoads(playerTwo, map) == false)
                 {
-                   playerTwo.speed = -10;
+                    playerTwo.speed = -10;
                 }
 
                 Raylib.BeginDrawing();

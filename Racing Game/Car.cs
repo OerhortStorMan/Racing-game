@@ -34,7 +34,7 @@ namespace Racing_Game
 
         public Vector2 origin = new Vector2(10, 5);
 
-         
+
 
         float dt = Raylib.GetFrameTime();
         float timerAcc = 0;
@@ -42,7 +42,7 @@ namespace Racing_Game
         float timerBreak = 0;
         float timerBreakAcc = 0;
 
-        
+
         //Position for spawning car
         public Car(float posX, float posY, Color carColor, int ID)
         {
@@ -85,7 +85,7 @@ namespace Racing_Game
                 {
                     rotation += rotationSpeed;
                 }
-                
+
             }
             if (Raylib.IsKeyDown(KeyboardKey.KEY_D) && speed != 0)
             {
@@ -130,7 +130,7 @@ namespace Racing_Game
 
             yInput = 0;
 
-            
+
         }
 
         public void CalculatePlayerTwo()
@@ -212,6 +212,6 @@ namespace Racing_Game
 
         }
 
-        
+
     }
 }

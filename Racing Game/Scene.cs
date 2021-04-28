@@ -34,7 +34,7 @@ namespace Racing_Game
             Raylib.DrawRectangleRec(map.bufferCheckpoint, Color.GRAY);
 
 
-            
+
             //Draw p1
             playerOneRec = new Rectangle(playerOne.posX, playerOne.posY, playerOne.width, playerOne.length);
 
@@ -58,53 +58,53 @@ namespace Racing_Game
             //Draw lap score
             Raylib.DrawText("P1 Laps: " + playerOne.lapScore.ToString(), 30, 5, 45, Color.RED);
 
-            Raylib.DrawText("P2 Laps: " + playerTwo.lapScore.ToString(), Window.windowW - 260, 5, 45, Color.BLUE);             
-             
+            Raylib.DrawText("P2 Laps: " + playerTwo.lapScore.ToString(), Window.windowW - 260, 5, 45, Color.BLUE);
+
             //Player one add lap score
-                if (playerOne.hasPassedGoal == true && playerOne.hasPassedCheckpoint == true)
-                {
-                    playerOne.lapScore++;
-                    playerOne.hasPassedCheckpoint = false;
-                    playerOne.hasPassedGoal = false;
-                }
+            if (playerOne.hasPassedGoal == true && playerOne.hasPassedCheckpoint == true)
+            {
+                playerOne.lapScore++;
+                playerOne.hasPassedCheckpoint = false;
+                playerOne.hasPassedGoal = false;
+            }
 
-                if (Raylib.CheckCollisionRecs(playerOneRec, map.checkpoint))
-                {
-                    playerOne.hasPassedCheckpoint = true;
-                }
-                
-                if (Raylib.CheckCollisionRecs(playerOneRec, map.goal))
-                {
-                    playerOne.hasPassedGoal = true;
-                }
+            if (Raylib.CheckCollisionRecs(playerOneRec, map.checkpoint))
+            {
+                playerOne.hasPassedCheckpoint = true;
+            }
 
-                if (Raylib.CheckCollisionRecs(playerOneRec, map.bufferCheckpoint) == true)
-                {
-                    playerOne.hasPassedGoal = false;
-                }
+            if (Raylib.CheckCollisionRecs(playerOneRec, map.goal))
+            {
+                playerOne.hasPassedGoal = true;
+            }
+
+            if (Raylib.CheckCollisionRecs(playerOneRec, map.bufferCheckpoint) == true)
+            {
+                playerOne.hasPassedGoal = false;
+            }
 
             //player one add lap score
-                if (playerTwo.hasPassedGoal == true && playerTwo.hasPassedCheckpoint == true)
-                {
-                    playerTwo.lapScore++;
-                    playerTwo.hasPassedCheckpoint = false;
-                    playerTwo.hasPassedGoal = false;
-                }
+            if (playerTwo.hasPassedGoal == true && playerTwo.hasPassedCheckpoint == true)
+            {
+                playerTwo.lapScore++;
+                playerTwo.hasPassedCheckpoint = false;
+                playerTwo.hasPassedGoal = false;
+            }
 
-                if (Raylib.CheckCollisionRecs(playerTwoRec, map.checkpoint))
-                {
-                    playerTwo.hasPassedCheckpoint = true;
-                }
-                
-                if (Raylib.CheckCollisionRecs(playerTwoRec, map.goal))
-                {
-                    playerTwo.hasPassedGoal = true;
-                }
+            if (Raylib.CheckCollisionRecs(playerTwoRec, map.checkpoint))
+            {
+                playerTwo.hasPassedCheckpoint = true;
+            }
 
-                if (Raylib.CheckCollisionRecs(playerTwoRec, map.bufferCheckpoint) == true)
-                {
-                    playerTwo.hasPassedGoal = false;
-                }
+            if (Raylib.CheckCollisionRecs(playerTwoRec, map.goal))
+            {
+                playerTwo.hasPassedGoal = true;
+            }
+
+            if (Raylib.CheckCollisionRecs(playerTwoRec, map.bufferCheckpoint) == true)
+            {
+                playerTwo.hasPassedGoal = false;
+            }
         }
 
 
@@ -138,9 +138,9 @@ namespace Racing_Game
 
         public void AWinner(Car car)
         {
-            Raylib.DrawRectangle(0,0,Window.windowW, Window.windowH, Color.BLACK);
+            Raylib.DrawRectangle(0, 0, Window.windowW, Window.windowH, Color.BLACK);
             Raylib.DrawText("Player " + car.ID.ToString() + " has won the race", 400, 350, 50, Color.MAGENTA);
-            
+
         }
     }
 }
