@@ -104,6 +104,7 @@ Contol scheme:
             Car playerOne = new Car(200, 145, Color.RED, 1);
             Car playerTwo = new Car(200, 160, Color.BLUE, 2);
 
+            //Creates a scene that connects the players to the Scene class
             Scene plane = new Scene(playerOne, playerTwo);
 
             while (!Raylib.WindowShouldClose())
@@ -112,6 +113,7 @@ Contol scheme:
 
                 playerTwo.CalculatePlayerTwo();
 
+                //If a player doesnt collide with a road then the car will bump back out and they lose their speed
                 if (plane.PlayerOneCollidesWithRoads(playerOne, map) == false)
                 {
                     playerOne.speed = -10;
@@ -126,8 +128,10 @@ Contol scheme:
 
                 Raylib.ClearBackground(Window.backgroundColorGame);
 
+                //Draw cars and map
                 plane.Draw(playerOne, playerTwo, map);
 
+                //If playerone has passed all laps let player 1 win, also stops their speed making it impossible for playerone to win, then two, or other way around
                 if (playerOne.lapScore == map.lapReq)
                 {
                     plane.AWinner(playerOne);

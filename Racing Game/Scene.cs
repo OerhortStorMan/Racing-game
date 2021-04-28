@@ -5,6 +5,7 @@ namespace Racing_Game
 {
     public class Scene : GameObject
     {
+        //Defines the cars, bools if theyre on the road, and their rectangles
         Car playerOne;
         Car playerTwo;
         bool playerOneIsOnRoad = false;
@@ -12,6 +13,7 @@ namespace Racing_Game
         Rectangle playerOneRec;
         Rectangle playerTwoRec;
 
+        //Connects the cars to the scene
         public Scene(Car playerOne, Car playerTwo)
         {
             this.playerOne = playerOne;
@@ -68,6 +70,7 @@ namespace Racing_Game
                 playerOne.hasPassedGoal = false;
             }
 
+            //Makes sure playerone has driven past checkpoints and goal
             if (Raylib.CheckCollisionRecs(playerOneRec, map.checkpoint))
             {
                 playerOne.hasPassedCheckpoint = true;
@@ -83,7 +86,7 @@ namespace Racing_Game
                 playerOne.hasPassedGoal = false;
             }
 
-            //player one add lap score
+            //player two add lap score
             if (playerTwo.hasPassedGoal == true && playerTwo.hasPassedCheckpoint == true)
             {
                 playerTwo.lapScore++;
@@ -107,7 +110,7 @@ namespace Racing_Game
             }
         }
 
-
+        //Bool for checking if playerone is on road
         public bool PlayerOneCollidesWithRoads(Car car, Map map)
         {
             for (int i = 0; i < map.roads.Count; i++)
@@ -122,6 +125,7 @@ namespace Racing_Game
             return false;
         }
 
+        //Bool for checking if playertwo is on road
         public bool PlayerTwoCollidesWithRoads(Car car, Map map)
         {
             for (int i = 0; i < map.roads.Count; i++)
@@ -136,6 +140,7 @@ namespace Racing_Game
             return false;
         }
 
+        //Draws a winner if a car has done all laps
         public void AWinner(Car car)
         {
             Raylib.DrawRectangle(0, 0, Window.windowW, Window.windowH, Color.BLACK);

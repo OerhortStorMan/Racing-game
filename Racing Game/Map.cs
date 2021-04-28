@@ -10,7 +10,7 @@ namespace Racing_Game
         //Amounth of laps required for a win
         public int lapReq = 2;
 
-        //Road
+        //Roads
         static float roadWidth = 100;
         Rectangle finishLine = new Rectangle(100, 100, roadWidth, 300);
         Rectangle straightway = new Rectangle(100, 100, 1300, roadWidth);
