@@ -9,7 +9,7 @@ namespace Racing_Game
         Car playerTwo;
         bool playerOneIsOnRoad = false;
         bool playerTwoIsOnRoad = false;
-        public Rectangle playerOneRec;
+        Rectangle playerOneRec;
         Rectangle playerTwoRec;
 
         public Scene(Car playerOne, Car playerTwo)

@@ -46,7 +46,7 @@ Contol scheme:
             RIGHT - Turn Right
         
         ESC - Return to menu
-", 500, 10, 20, Color.WHITE);
+", 500, 10, 25, Color.WHITE);
 
                 //PICK OPTIONS ARRAY
                 string[] pickArray = new string[] { "Play", /*"Options",*/ "Quit" };
