@@ -22,7 +22,7 @@ namespace Racing_Game
 
                 Raylib.ClearBackground(Window.backgroundColorMain);
 
-                Raylib.DrawText("Racing game", 10, 10, 50, Color.WHITE);
+                Raylib.DrawText("Racing game", 10, 10, 70, Color.WHITE);
 
                 Raylib.DrawText(@"
 Contol scheme:
@@ -51,10 +51,11 @@ Contol scheme:
                 //PICK OPTIONS ARRAY
                 string[] pickArray = new string[] { "Play", "Quit" };
 
-                int playTextY = 70;
+                //the text's y position is defined here since the same value is used further down in the code in the "picker" part
+                int playTextY = 120;
                 Raylib.DrawText(pickArray[0], 100, playTextY, 50, Color.WHITE);
 
-                int exitTextY = 150;
+                int exitTextY = 190;
                 Raylib.DrawText(pickArray[1], 100, exitTextY, 50, Color.WHITE);
 
                 if (Raylib.IsKeyPressed(KeyboardKey.KEY_S))
