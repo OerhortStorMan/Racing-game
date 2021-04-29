@@ -1,30 +1,35 @@
 using System;
 using Raylib_cs;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace Racing_Game
 {
     public class Map : GameObject
     {
-        //Road
-         static float roadWidth = 100;
-         public Rectangle finishLine = new Rectangle(100, 100, roadWidth, 300);
-         public Rectangle straightway = new Rectangle(100, 100, 1300, roadWidth);
-         public Rectangle deathcorner = new Rectangle(1300, 100, roadWidth, 300);
-         public Rectangle rebound = new Rectangle(500, 300, 800, roadWidth);
-         public Rectangle snaketail = new Rectangle(500, 300, roadWidth, 300);
-         public Rectangle turnaround = new Rectangle(500, 600, 300, roadWidth);
-         public Rectangle mouth = new Rectangle(700, 500, roadWidth, 200);
-         public Rectangle parallel = new Rectangle(700, 500, 600, roadWidth);
-         public Rectangle southway = new Rectangle(1300, 500, roadWidth, 350);
-         public Rectangle straightwayJR = new Rectangle(300, 775, 1100, (roadWidth-25));
-         public Rectangle offset = new Rectangle(300, 300, roadWidth, 500);
-         public Rectangle reRun = new Rectangle(100, 300, 300, roadWidth);
+        //Amounth of laps required for a win
+        public int lapReq = 2;
+
+        //Roads
+        static float roadWidth = 100;
+        Rectangle finishLine = new Rectangle(100, 100, roadWidth, 300);
+        Rectangle straightway = new Rectangle(100, 100, 1300, roadWidth);
+        Rectangle deathcorner = new Rectangle(1300, 100, roadWidth, 300);
+        Rectangle rebound = new Rectangle(500, 300, 800, roadWidth);
+        Rectangle snaketail = new Rectangle(500, 300, roadWidth, 300);
+        Rectangle turnaround = new Rectangle(500, 600, 300, roadWidth);
+        Rectangle mouth = new Rectangle(700, 500, roadWidth, 200);
+        Rectangle parallel = new Rectangle(700, 500, 600, roadWidth);
+        Rectangle southway = new Rectangle(1300, 500, roadWidth, 350);
+        Rectangle straightwayJR = new Rectangle(300, 775, 1100, (roadWidth - 25));
+        Rectangle offset = new Rectangle(300, 300, roadWidth, 500);
+        Rectangle reRun = new Rectangle(100, 300, 300, roadWidth);
 
         //Road list
-        public  List<Rectangle> roads = new List<Rectangle>();
+        //This shortens code in Scene using a for loop to draw roads
+        public List<Rectangle> roads = new List<Rectangle>();
 
-        //Initiate road
+        //Initiate road, adding road recs to roads list
         public void InitRoads()
         {
             roads.Add(finishLine);
@@ -42,10 +47,12 @@ namespace Racing_Game
         }
 
         //Finish line & checkpoint
-         public Rectangle goal = new Rectangle(230, 100, 20, 100);
+        public Rectangle goal = new Rectangle(230, 100, 20, 100);
 
-         public Rectangle checkpoint = new Rectangle(500, 500, 100, 20);
-        
-        
+        public Rectangle checkpoint = new Rectangle(500, 500, 100, 20);
+
+        public Rectangle bufferCheckpoint = new Rectangle(280, 100, 20, 100);
+
+
     }
 }
