@@ -5,19 +5,15 @@ namespace Racing_Game
 {
     public class Scene : GameObject
     {
+        //Defines the cars, bools if theyre on the road, and their rectangles
         Car playerOne;
         Car playerTwo;
         bool playerOneIsOnRoad = false;
         bool playerTwoIsOnRoad = false;
-
-        bool playerOneHasPassedCheckpoint = false;
-        bool playerTwoHasPassedCheckpoint = false;
-        bool playerOneHasPassedGoal = false;
-        bool playerTwoHasPassedGoal = false;
-
-        public Rectangle playerOneRec;
+        Rectangle playerOneRec;
         Rectangle playerTwoRec;
 
+        //Connects the cars to the scene
         public Scene(Car playerOne, Car playerTwo)
         {
             this.playerOne = playerOne;
@@ -26,57 +22,95 @@ namespace Racing_Game
 
         public void Draw(Car playerOne, Car playerTwo, Map map)
         {
-            //road
-            Raylib.DrawRectangleRec(map.finishLine, Color.GRAY);
-            Raylib.DrawRectangleRec(map.straightway, Color.GRAY);
-            Raylib.DrawRectangleRec(map.deathcorner, Color.GRAY);
-            Raylib.DrawRectangleRec(map.rebound, Color.GRAY);
-            Raylib.DrawRectangleRec(map.snaketail, Color.GRAY);
-            Raylib.DrawRectangleRec(map.turnaround, Color.GRAY);
-            Raylib.DrawRectangleRec(map.mouth, Color.GRAY);
-            Raylib.DrawRectangleRec(map.parallel, Color.GRAY);
-            Raylib.DrawRectangleRec(map.southway, Color.GRAY);
-            Raylib.DrawRectangleRec(map.straightwayJR, Color.GRAY);
-            Raylib.DrawRectangleRec(map.offset, Color.GRAY);
-            Raylib.DrawRectangleRec(map.reRun, Color.GRAY);
+            //Draw road and goals + checkpoints
+            for (int i = 0; i < map.roads.Count; i++)
+            {
+                Raylib.DrawRectangleRec(map.roads[i], Color.GRAY);
+            }
 
+            //Draw goal
             Raylib.DrawRectangleRec(map.goal, Color.WHITE);
 
-            Raylib.DrawRectangleRec(map.checkpoint, Color.YELLOW);
+            //These are gray so that they are invisible to the player, making it near impossible for the player to cheat without seeing the code
+            Raylib.DrawRectangleRec(map.checkpoint, Color.GRAY);
+            Raylib.DrawRectangleRec(map.bufferCheckpoint, Color.GRAY);
 
 
+
+            //Draw p1
             playerOneRec = new Rectangle(playerOne.posX, playerOne.posY, playerOne.width, playerOne.length);
 
             Raylib.DrawRectanglePro(playerOneRec, playerOne.origin, playerOne.rotation, playerOne.carColor);
 
+            //Roof/back of car to indicate back and front
+            Raylib.DrawRectanglePro(new Rectangle(playerOne.posX, playerOne.posY, 10, 10), playerOne.origin, playerOne.rotation, Color.BROWN);
 
 
 
+            //Draw p2
             playerTwoRec = new Rectangle(playerTwo.posX, playerTwo.posY, playerTwo.width, playerTwo.length);
 
             Raylib.DrawRectanglePro(playerTwoRec, playerTwo.origin, playerTwo.rotation, playerTwo.carColor);
 
+            //Roof/back of car to indicate back and front
+            Raylib.DrawRectanglePro(new Rectangle(playerTwo.posX, playerTwo.posY, 10, 10), playerTwo.origin, playerTwo.rotation, Color.DARKBLUE);
 
 
 
-
+            //Draw lap score
             Raylib.DrawText("P1 Laps: " + playerOne.lapScore.ToString(), 30, 5, 45, Color.RED);
 
             Raylib.DrawText("P2 Laps: " + playerTwo.lapScore.ToString(), Window.windowW - 260, 5, 45, Color.BLUE);
 
-            playerOneHasPassedCheckpoint = Raylib.CheckCollisionRecs(playerOneRec, map.checkpoint);
-            playerTwoHasPassedCheckpoint = Raylib.CheckCollisionRecs(playerTwoRec, map.checkpoint);
-            playerOneHasPassedGoal = Raylib.CheckCollisionRecs(playerOneRec, map.goal);
-            playerTwoHasPassedGoal = Raylib.CheckCollisionRecs(playerTwoRec, map.goal);
-            
-            if (playerOneHasPassedCheckpoint == true && playerOneHasPassedGoal == true)
+            //Player one add lap score
+            if (playerOne.hasPassedGoal == true && playerOne.hasPassedCheckpoint == true)
             {
                 playerOne.lapScore++;
-                playerOneHasPassedCheckpoint = false;
-                playerOneHasPassedGoal = false;
+                playerOne.hasPassedCheckpoint = false;
+                playerOne.hasPassedGoal = false;
+            }
+
+            //Makes sure playerone has driven past checkpoints and goal
+            if (Raylib.CheckCollisionRecs(playerOneRec, map.checkpoint))
+            {
+                playerOne.hasPassedCheckpoint = true;
+            }
+
+            if (Raylib.CheckCollisionRecs(playerOneRec, map.goal))
+            {
+                playerOne.hasPassedGoal = true;
+            }
+
+            if (Raylib.CheckCollisionRecs(playerOneRec, map.bufferCheckpoint) == true)
+            {
+                playerOne.hasPassedGoal = false;
+            }
+
+            //player two add lap score
+            if (playerTwo.hasPassedGoal == true && playerTwo.hasPassedCheckpoint == true)
+            {
+                playerTwo.lapScore++;
+                playerTwo.hasPassedCheckpoint = false;
+                playerTwo.hasPassedGoal = false;
+            }
+
+            if (Raylib.CheckCollisionRecs(playerTwoRec, map.checkpoint))
+            {
+                playerTwo.hasPassedCheckpoint = true;
+            }
+
+            if (Raylib.CheckCollisionRecs(playerTwoRec, map.goal))
+            {
+                playerTwo.hasPassedGoal = true;
+            }
+
+            if (Raylib.CheckCollisionRecs(playerTwoRec, map.bufferCheckpoint) == true)
+            {
+                playerTwo.hasPassedGoal = false;
             }
         }
 
+        //Bool for checking if playerone is on road
         public bool PlayerOneCollidesWithRoads(Car car, Map map)
         {
             for (int i = 0; i < map.roads.Count; i++)
@@ -91,6 +125,7 @@ namespace Racing_Game
             return false;
         }
 
+        //Bool for checking if playertwo is on road
         public bool PlayerTwoCollidesWithRoads(Car car, Map map)
         {
             for (int i = 0; i < map.roads.Count; i++)
@@ -103,6 +138,14 @@ namespace Racing_Game
                 }
             }
             return false;
+        }
+
+        //Draws a winner if a car has done all laps
+        public void AWinner(Car car)
+        {
+            Raylib.DrawRectangle(0, 0, Window.windowW, Window.windowH, Color.BLACK);
+            Raylib.DrawText("Player " + car.ID.ToString() + " has won the race", 400, 350, 50, Color.MAGENTA);
+
         }
     }
 }

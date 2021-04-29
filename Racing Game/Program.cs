@@ -31,14 +31,12 @@ Contol scheme:
         S - Move down
         E - Select
         ESC - Exit game
-
     In-game:
         Player one:
             W - Accelerate
             S - Reverse / Break
             A - Turn left
             D - Turn Right
-
         Player two:
             UP - Accelerate
             DOWN - Reverse / Break
@@ -151,6 +149,3 @@ Contol scheme:
         }
     }
 }
-
-// double GetTime(void);   // Returns elapsed time in seconds since InitWindow()
-
