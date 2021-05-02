@@ -108,6 +108,7 @@ Contol scheme:
 
             while (!Raylib.WindowShouldClose())
             {
+                //Calculate the players movement
                 playerOne.CalculatePlayerOne();
 
                 playerTwo.CalculatePlayerTwo();
