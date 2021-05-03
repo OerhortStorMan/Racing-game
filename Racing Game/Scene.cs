@@ -22,7 +22,7 @@ namespace Racing_Game
 
         public void Draw(Car playerOne, Car playerTwo, Map map)
         {
-            //Draw road and goals + checkpoints
+            //Draws roads in a for-loop
             for (int i = 0; i < map.roads.Count; i++)
             {
                 Raylib.DrawRectangleRec(map.roads[i], Color.GRAY);
@@ -31,7 +31,7 @@ namespace Racing_Game
             //Draw goal
             Raylib.DrawRectangleRec(map.goal, Color.WHITE);
 
-            //These are gray so that they are invisible to the player, making it near impossible for the player to cheat without seeing the code
+            //These are gray so that they are "invisible" to the player, making it near impossible for the player to cheat without seeing the code
             Raylib.DrawRectangleRec(map.checkpoint, Color.GRAY);
             Raylib.DrawRectangleRec(map.bufferCheckpoint, Color.GRAY);
 
