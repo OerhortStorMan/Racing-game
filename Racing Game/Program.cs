@@ -15,6 +15,7 @@ namespace Racing_Game
             //Create window
             Window.Initialize();
 
+            //Defines the position for the picker outside of the while loop so the value does not return to 0 every loop
             int picker = 0;
             while (!Raylib.WindowShouldClose())
             {
